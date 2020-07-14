@@ -9,7 +9,7 @@ void rtc_trig(void)
 
 void send_nonce(uint64_t nonce)
 {
-	printf("SHARE: %016llx\r\n", nonce);
+	printf("#%016llx\r\n", nonce);
 	nonce_ctr++;
 }
 

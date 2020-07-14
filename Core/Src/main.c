@@ -135,7 +135,7 @@ int main(void)
 
 	if(flag.print_stat)
 	{
-		printf("%luH/s, %lu shares\r\n", stat_hashrate, nonce_ctr);
+		printf("> %luH/s, shares: %lu, diff %lld\r\n", stat_hashrate, nonce_ctr, 0xFFFFFFFFFFFFFFFF / target);
 		flag.print_stat = _FALSE;
 	}
 
