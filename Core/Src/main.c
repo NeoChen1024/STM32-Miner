@@ -49,7 +49,7 @@ volatile uint32_t hash_ctr=0;
 volatile uint32_t stat_hashrate=0;
 volatile uint32_t nonce_ctr=0;
 uint64_t nonce=0;
-uint64_t target=0x1000000000000;
+uint64_t target=0x1000000000;
 uint8_t blob[BLOBSIZE];
 uint8_t job_buf[JOBSIZE];
 struct flag_s flag;

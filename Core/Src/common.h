@@ -9,7 +9,7 @@
 #define _TRUE	-1
 #define _FALSE	0
 
-#define _LOOPS_K12	1000U
+#define _LOOPS_K12	500U
 #define BLOBSIZE	72
 #define TARGETSIZE	8
 #define JOBSIZE		(BLOBSIZE + TARGETSIZE)
