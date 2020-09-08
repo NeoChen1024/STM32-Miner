@@ -169,15 +169,14 @@ void mine(uint64_t nonce, uint64_t target, uint8_t *blob) {
     is[23] = 0x00L;
     is[24] = 0x00L;
 
-    savei[0] = savei[1];	// warnings
-    for (i=0; i< _LOOPS_K12; i++, nonce++) {
+    for (i=0; likely(i< _LOOPS_K12); i++, nonce++) {
     	memcpy(ss,is,25*8);
         ss[4] &= 0x00FFFFFFFFFFFFFFL;
         ss[4] |= (uint64_t)(nonce & 0xFF) << (24+32);
         ss[5] &= 0xFF00000000000000L;
         ss[5] |= nonce >> 8;
         algo_k12(ss,bcs);
-        if (ss[3] < target)
+        if (unlikely(ss[3] < target))
 		send_nonce(nonce);
     }
 }

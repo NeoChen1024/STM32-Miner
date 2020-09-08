@@ -17,6 +17,9 @@
 #define RECEIVE_JOB(dptr, size)	\
 	HAL_UART_Receive_IT(&huart2, dptr, size)
 
+#define likely(x)     __builtin_expect(!!(x), 1)
+#define unlikely(x)   __builtin_expect(!!(x), 0)
+
 extern volatile uint32_t hash_ctr;
 extern volatile uint32_t stat_hashrate;
 extern volatile uint32_t nonce_ctr;
